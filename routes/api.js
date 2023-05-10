@@ -31,6 +31,8 @@ async function completion(prompt) {
 }
 
 async function transcribe(buffer) {
+    console.log(`Called transcribe api`);
+    console.log(`AI_KEY ::: ${process.env.OPEN_AI_KEY}`);
     const response = await openai.createTranscription(
         buffer,
         "whisper-1",
