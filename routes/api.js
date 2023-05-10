@@ -65,9 +65,11 @@ router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 
-router.post("/", upload.any('file'), async (req, res) => {
+router.post("/completion", upload.any('file'), async (req, res) => {
+    console.log('============POST request got==========')
     audio_file = req.files[0];
     queryType = req.body.queryType;
+    console.log(`queryType ::: ${queryType}`);
     buffer = audio_file.buffer;
     buffer.name = audio_file.originalname;
     const transcribeResp = await transcribe(buffer);

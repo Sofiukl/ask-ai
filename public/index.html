@@ -84,7 +84,7 @@
       formData.append('file', selectedFile);
       formData.append('queryType', queryType);
 
-      const response = await fetch("/", {
+      const response = await fetch("/completion", {
         method: "POST",
         body: formData,
       });
