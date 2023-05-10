@@ -1,5 +1,5 @@
 version: 1.0
-runtime: nodejs12
+runtime: nodejs16
 build:
   commands:
     pre-build:
@@ -7,7 +7,6 @@ build:
     build:
       - npm install
 run:
-  runtime-version: 12.21.0
   command: node index.js
   network:
     port: 4000
