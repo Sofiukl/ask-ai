@@ -23,7 +23,10 @@ async function completion(prompt) {
     const { choices } = response.data;
     console.log(`summary response ::: ${JSON.stringify(choices)}`);
     // remove the spaces from the response text
-    const reply = choices?.[0].text || 'No summary found'
+    let reply = 'No summary found';
+    if (choices && choices.length) {
+        reply = choices?.[0].text || 'No summary found'
+    }
     return reply;
 }
 
